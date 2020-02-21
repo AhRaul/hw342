@@ -12,6 +12,16 @@ public class EratosphenSharp {
             fullArray.add(i);
         }
 
+        int changedSize=fullArray.size();
+
+        for(int i = 0; i<changedSize; i++) {
+            int value = fullArray.get(i);
+            for(int j = value+value; j<=quantity; j = j+value) {
+                fullArray.removeFirstOccurrence(j);
+                changedSize = fullArray.size();
+            }
+        }
+
         return fullArray;
     }
 }
